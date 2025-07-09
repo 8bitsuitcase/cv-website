@@ -1,48 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>CV Submission</title>
-</head>
-<body>
-    <!-- Ayesa Logo -->
-    <div style="text-align: center; margin-bottom: 30px;">
-        <img src="{{ url_for('static', filename='ayesa_logo.png') }}" alt="Ayesa Logo" width="150">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-top: 10px;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      input[type="file"] {
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #0077cc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #005fa3;
+      }
+      .logo-container {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Logo -->
+    <div class="logo-container">
+      <img
+        src="{{ url_for('static', filename='ayesa_logo.png') }}"
+        alt="Ayesa Logo"
+        style="width: 120px; height: auto"
+      />
     </div>
 
-    <h1>Submit Your CV</h1>
+    <!-- Form -->
+    <h2>Submit Your CV</h2>
     <form action="/submit" method="POST" enctype="multipart/form-data">
-        <label for="name">Name:</label><br>
-        <input type="text" name="name" required><br><br>
+      <label for="full_name">Full Name:</label>
+      <input type="text" name="full_name" required />
 
-        <label for="age">Age:</label><br>
-        <input type="number" name="age" required><br><br>
+      <label for="age">Age:</label>
+      <input type="number" name="age" required />
 
-        <label for="nationality">Nationality:</label><br>
-        <input type="text" name="nationality" required><br><br>
+      <label for="nationality">Nationality:</label>
+      <input type="text" name="nationality" required />
 
-        <label for="current_salary">Current Salary:</label><br>
-        <input type="text" name="current_salary"><br><br>
+      <label for="current_salary">Current Salary:</label>
+      <input type="text" name="current_salary" required />
 
-        <label for="expected_salary">Expected Salary:</label><br>
-        <input type="text" name="expected_salary"><br><br>
+      <label for="expected_salary">Expected Salary:</label>
+      <input type="text" name="expected_salary" required />
 
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" name="email" required />
 
-        <label for="phone_number">Phone Number:</label><br>
-        <input type="text" name="phone_number" required><br><br>
+      <label for="phone_number">Phone Number:</label>
+      <input type="text" name="phone_number" required />
 
-        <label for="job_title">Job Title:</label><br>
-        <input type="text" name="job_title" required><br><br>
+      <label for="job_title">Job Title:</label>
+      <input type="text" name="job_title" required />
 
-        <label for="specialization">Specialization:</label><br>
-        <input type="text" name="specialization"><br><br>
+      <label for="specialization">Specialization:</label>
+      <input type="text" name="specialization" required />
 
-        <label for="cv_file">Upload CV (PDF or Word):</label><br>
-        <input type="file" name="cv_file" accept=".pdf, .doc, .docx" required><br><br>
+      <label for="cv_file">Upload CV (PDF or Word):</label>
+      <input type="file" name="cv_file" accept=".pdf, .doc, .docx" required />
 
-        <button type="submit">Submit</button>
+      <button type="submit">Submit</button>
     </form>
-</body>
+  </body>
 </html>

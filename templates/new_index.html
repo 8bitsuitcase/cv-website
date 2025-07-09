@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CV Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h2>Submit Your CV</h2>
+  <form id="cv-form" enctype="multipart/form-data" method="post" action="/submit-cv">
+    <input name="name" placeholder="Full Name" required>
+    <input name="age" type="number" placeholder="Age" required>
+    <input name="nationality" placeholder="Nationality" required>
+    <input name="current_salary" type="number" placeholder="Current Salary" required>
+    <input name="expected_salary" type="number" placeholder="Expected Salary" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="phone" placeholder="Phone Number" required>
+    <input name="job_title" placeholder="Job Title" required>
+    <input name="specialization" placeholder="Specialization" required>
+
+    <label>Upload CV (PDF or Word):</label>
+    <input name="cv_file" type="file" accept=".pdf,.doc,.docx"> <!-- No "required" -->
+
+    <button type="submit">Submit CV</button>
+  </form>
+</body>
+</html>
